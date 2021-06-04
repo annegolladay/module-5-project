@@ -86,7 +86,7 @@ app.get('/api/movies', (req, res) => {
 })
 
 
-app.get('/api/places', ctrl.getPlaces)
+app.get('/api/places', ctrl.getAllPlaces)
 app.post('/api/places', ctrl.createPlace)
 app.put('/api/places/:id', ctrl.updatePlace)
 app.delete('/api/places/:id', ctrl.deletePlace)

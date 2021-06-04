@@ -2,7 +2,7 @@ const places = require('./db.json')
 let globalId = 4
 
 module.exports = {
-    getPlaces: (req, res) => {
+    getAllPlaces: (req, res) => {
         res.status(200).send(places)
     },
     createPlace: (req, res) => {

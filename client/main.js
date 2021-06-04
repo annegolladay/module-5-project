@@ -20,7 +20,7 @@ function submitHandler(e) {
     let imageURL = document.querySelector('#img')
 
     let bodyObj = {
-        name: name.nodeValue,
+        name: name.value,
         imageURL: imageURL.value
     }
 
