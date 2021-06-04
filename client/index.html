@@ -4,7 +4,31 @@
     <title>Back End Assessment</title>
   </head>
   <body class="container">
+    <h1>Random Inspiration</h1>
+    
     <button id="complimentButton">Get a compliment</button>
+
+    <button id="fortuneButton">Get Your Fortune</button>
+
+    <button id="quoteButton">Inspirational Quotes</button>
+
+    <section class="container-two">
+      <h2>Inspirational Places</h2>
+
+      <form>
+        <input 
+        type="text"
+        id="name"
+        placeholder="What is the name of this place?"/>
+        <input 
+        type="text"
+        id="img"
+        placeholder="Paste image URL"/>
+      </form>
+      <button id="placeButton">Add Place</button>
+    </section>
+
+    <section class="places-container"></section>
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script>
@@ -15,6 +39,23 @@
               alert(data);
             });
       };
+
+      document.getElementById("fortuneButton").onclick = function () {
+        axios.get("http://localhost:4000/api/fortune/")
+          .then(function (response) {
+            const data = response.data
+            alert(data)
+          })
+      }
+
+      document.getElementById("quoteButton").onclick = function () {
+        axios.get("http://localhost:4000/api/quote/")
+          .then(function (response) {
+            const data = response.data
+            alert(data)
+          })
+      }
+
     </script>
   </body>
 </html>
