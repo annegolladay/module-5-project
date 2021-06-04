@@ -1,0 +1,17 @@
+[
+    {
+      "id": 1,
+      "name": "Fairy Pools –  Scotland",
+      "imageURL" : "https://www.bocadolobo.com/blog/wp-content/uploads/2013/11/10-of-the-Most-Inspiring-Places-On-Earth-Boca-do-Lobo-blog-Fairy-Pools-Scotland.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Bora Bora, French Polynesia",
+      "imageURL" : "https://hips.hearstapps.com/hbz.h-cdn.co/assets/16/16/bora-bora-gettyimages-575766591.jpg?crop=1.0xw:1xh;center,top&resize=980:*"
+    },
+    {
+      "id": 3,
+      "name": "Blue Lagoon, Iceland",
+      "imageURL" : "https://hips.hearstapps.com/hbz.h-cdn.co/assets/16/16/iceland-gettyimages-511371497_1.jpg?crop=1.0xw:1xh;center,top&resize=980:*"
+    }
+  ]

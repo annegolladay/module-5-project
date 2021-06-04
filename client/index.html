@@ -12,6 +12,14 @@
 
     <button id="quoteButton">Inspirational Quotes</button>
 
+    <button id="musicButton">Inspiring Music</button>
+
+    <button id="activityButton">Inspiring Activites</button>
+
+    <h1>Inspirational Movie List</h1>
+    <ul id="movies"></ul>
+    <button id="movieButton">Inspirational Movies</button>
+
     <section class="container-two">
       <h2>Inspirational Places</h2>
 
@@ -56,6 +64,40 @@
           })
       }
 
+      document.getElementById("musicButton").onclick = function () {
+        axios.get("http://localhost:4000/api/music/")
+            .then(function (response) {
+              const data = response.data
+              alert(data)
+            })
+      }
+
+      document.getElementById("activityButton").onclick = function () {
+        axios.get("http://localhost:4000/api/activity/")
+            .then(function (response) {
+              const data = response.data
+              alert(data)
+            })
+      }
+
+      document.getElementById("movieButton").onclick = function () {
+        axios
+          .get("http://localhost:4000/api/movies")
+          .then(function (response) {
+            const data = response.data
+            document.getElementById("movies").innerHTML = data
+              .map(function (person) {
+                return '<li class="row">' + movies
+              })
+              .join("")
+          })
+          .catch(function (err) {
+            document.getElementById("movies").innerHTML =
+              '<li class="text-danger">' + err.message + "</li>"
+          })
+      }
+
     </script>
+    <script src="main.js"></script>
   </body>
 </html>

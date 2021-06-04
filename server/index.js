@@ -1,12 +1,13 @@
 const express = require("express");
 const cors = require("cors");
+const ctrl = require('./controller')
 
 const app = express();
 
 
 app.use(cors());
+app.use(express.json()); 
 
-app.use(express.json()); // When we want to be able to accept JSON.
 
 app.get("/api/compliment", (req, res) => {
   const compliments = ["Gee, you're a smart cookie!",
@@ -51,6 +52,44 @@ app.get("/api/quote", (req, res) => {
   res.status(200).send(randomQuote)
 
 })
+
+app.get("/api/music", (req, res) => {
+  const musicList = ["Fight Song",
+					 "Stronger",
+					 "I Will Survive",
+           "Happy",
+           "Beautiful Day",
+  ]
+
+  let randomIndex = Math.floor(Math.random() * musicList.length)
+  let randomMusic = musicList[randomIndex];
+  res.status(200).send(randomMusic);
+})
+
+app.get("/api/activity", (req, res) => {
+  const activities = ["Give service to a neighbor",
+					 "Smile at a stranger",
+					 "Tell someone you love them",
+           "Write a thank you note to a person in need",
+  ]
+
+  let randomIndex = Math.floor(Math.random() * activities.length)
+  let randomActivity = activities[randomIndex]
+
+  res.status(200).send(randomActivity)
+  
+})
+
+app.get('/api/movies', (req, res) => {
+  let movieList = ['The Pursuit of Happyness', 'The Blind Side', 'Braveheart', 'Cinderella Man', 'Unbroken']
+  res.status(200).send(movieList)
+})
+
+
+app.get('/api/places', ctrl.getPlaces)
+app.post('/api/places', ctrl.createPlace)
+app.put('/api/places/:id', ctrl.updatePlace)
+app.delete('/api/places/:id', ctrl.deletePlace)
 
 
 app.listen(4000, () => console.log("Server running on 4000"));
